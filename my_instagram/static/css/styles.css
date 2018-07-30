@@ -1,0 +1,123 @@
+@font-face {
+font-family: 'Billabong';
+font-style: normal;
+font-weight: normal;
+src: local('Billabong'), url('Billabong.woff') format('woff');
+}
+
+
+h1, h2 {
+    color: red;
+}
+.my_search{
+    margin-left: 300px;
+    color: yellow;
+}
+.instagram-brand{
+    font-size:55px;
+    font-family: 'Billabong';
+    font-style: normal;
+    font-weight: normal;
+}
+.explore-img{
+  height: auto;
+  width: 60px;
+  border-radius: 60px;
+  margin-right:30px;
+
+
+}
+.profile-img{
+  width:60px;
+  border-radius:20px;
+}
+
+.user-icon{
+  width:60px;
+  border-radius:40px;
+  margin-top:20px;
+}
+
+.like-icon{
+    width:50px;
+    border-radius:25px;
+    margin-right:30px;
+}
+
+.comment-icon{
+    width:50px;
+    border-radius:25px;
+}
+
+.story_img{
+    width:60px;
+    border-radius:85px;
+    margin-top: 30px;
+    margin-bottom:10px;
+}
+
+
+.my_login{
+  border: solid;
+  border-width: 2px;
+  border-color: black;
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+}
+.card{
+    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom:20px;
+    width:100%;
+    margin-top:30px;
+}
+#modal_image{
+    width:100%;
+    height:100;
+}
+.explore_profiles_image{
+  border-radius: 150%;
+  width: 100%;
+  height: 50%;
+}
+
+.explore_button{
+  margin-bottom: 10px;
+}
+
+#story_section{
+    overflow:scroll;
+    height:300px;
+    width:70px;
+    margin-top:30px;
+    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+
+/* width */
+saba::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+saba::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+saba::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+saba::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.other-cards{
+    width: 80%;
+    margin-left: 135px;
+
+}
+
+#signup{
+}

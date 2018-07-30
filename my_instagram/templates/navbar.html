@@ -1,0 +1,73 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand instagram-brand" href="/">instagram</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+     <ul class="navbar-nav mr-auto">
+      <li class="nav-item my_search">
+      <form class="form-inline my-2 my-lg-0" role="search" action="{% url 'search_results' %}">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search by image caption" name="instagram" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+
+          <!--<form class="navbar-form" role="search" action="{% url 'search_results' %}">-->
+
+       <!--<div class="input-group">-->
+         <!--<input type="text" class="form-control" placeholder="Search Article" name="article">-->
+         <!--<div class="input-group-btn">-->
+           <!--<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>-->
+         <!--</div>-->
+       <!--</div>-->
+
+     <!--</form>-->
+          <!---->
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'my_explore' %}"><img class="explore-img" src="{% static 'icons/explore-tool.png' %}"></a>
+      </li>
+      <li class="nav-item">
+          {% if user.is_authenticated %}
+        <a class="nav-link disabled" href="{% url 'profile' profile_id=user.id%}"><img class="profile-img" src="{% static 'icons/profile_single.png' %}"></a>
+      {% endif%}
+      </li>
+    </ul>
+                    {% if user.is_authenticated %}
+            <ul>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false"><img class="user-icon" src="{% static 'icons/user_circle.png' %}"></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <a href="{% url 'profile' profile_id=user.id%}">{{ user.username }}</a>
+                  </li>
+                  <li>
+                    <a href="{%url 'new-image'%}">Post</a>
+                  </li>
+                  <li>
+                    <a href="{%url 'new-profile'%}">Create Profile</a>
+                  </li>
+                  <li>
+                    <a href="/accounts/password/change">Change Password</a>
+                  </li>
+                  <li>
+                    <a href="/logout">Logout</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            {% else %}
+            <li>
+              <a class='btn btn-default' href="/accounts/login">Login</a>
+            </li>
+            <li>
+              <a class='btn btn-default' href="/accounts/register">Register</a>
+            </li>
+
+            {% endif %}
+          </div>
+  </div>
+</nav>

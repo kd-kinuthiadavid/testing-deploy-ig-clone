@@ -1,0 +1,43 @@
+{%extends 'base.html'%}
+{% load static %}
+{% load friendshiptags %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+    <div class="col-md-2">
+        <a href="{% url 'follow' id=user.id %}"><button class="btn btn-primary">Follow{{image.user.username}}</button></a>
+        <p>followers{{ followers }}</p>
+        <p>following{{ following }}</p>
+    </div>
+    <div class="col-md-4">
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <img class="img-responsive img-thumbnail" src="{{profile.profile_photo.url}}" alt="profile_photo">
+                    <div class="container">
+                        <h3>@{{ profile.user.username }}</h3>
+                        <p class="title">{{ profile.status }}</p>
+                        <p>{{profile.bio}}</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        {% for image in images %}
+        <img src="{{image.image.url}}" alt="picture">
+        <p> {{image.user.username}}</p>
+        {% endfor %}
+    </div>
+    <div class="col-md-2">
+
+    </div>
+    <div class="row">
+    <h2 class="text-center"> No Profile</h2>
+        {% if user.is_authenticated %}
+    <a href="{% url 'new-profile' %}"><button type="button" class="btn btn-outline-primary btn-lg explore_button">Create Profile</button></a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
